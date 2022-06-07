@@ -8,33 +8,9 @@ public class JavaGenerics {
         findMax(f1,f2,f3);
         findMax(s1,s2,s3);
     }
-
-    public static Integer findMax(Integer a, Integer b , Integer c){
-        Integer maximum = a;
-        if(b.compareTo(maximum) > 0){
-            maximum = b;
-        }
-        if(c.compareTo(maximum) > 0){
-            maximum = c;
-        }
-        System.out.println("The Maximum Integer from " + a + " " + " " + b + " " + c + " is: " + maximum);
-        return maximum;
-    }
-
-    public static Float findMax(Float a, Float b, Float c){
-        Float maximum = a;
-        if(b.compareTo(maximum) > 0){
-            maximum = b;
-        }
-        if(c.compareTo(maximum) > 0){
-            maximum = c;
-        }
-        System.out.println("The Maximum Float Number from " + a + " " + " " + b + " " + c + " is: " + maximum);
-        return maximum;
-    }
-
-    public static String findMax(String a, String b, String c){
-        String maximum = a;
+    
+    public static <E extends Comparable<E>> void findMax(E a, E b, E c){
+        E maximum = a;
         if(b.compareTo(maximum) > 0){
             maximum = b;
         }
@@ -42,6 +18,5 @@ public class JavaGenerics {
             maximum = c;
         }
         System.out.println("The Maximum String from " + a + " " + " " + b + " " + c + " is: " + maximum);
-        return maximum;
     }
 }
